@@ -1,0 +1,32 @@
+.contacts {
+  color: var(--left-side-text-color);
+  font-size: larger;
+}
+
+.contacts-detail {
+  font-size: smaller;
+  text-align: center;
+}
+
+.contacts-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.contacts-list li {
+  margin: 10px 0;
+  color: var(--left-side-text-color);
+}
+
+.contacts-list li a {
+  margin: 0 0 0 5px;
+  color: var(--left-side-text-color);
+  text-decoration: none;
+}
+
+.contacts-list li a:visited {
+  margin: 10px 0;
+  color: var(--left-side-text-color);
+}
