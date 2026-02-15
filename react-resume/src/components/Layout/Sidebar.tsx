@@ -1,11 +1,17 @@
 import React from 'react';
 import { ResumeData } from '../../data/resumeData';
 import styles from './Sidebar.module.css';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 interface SidebarProps {
     data: ResumeData;
 }
+
+const SkillList: React.FC<{ items: string[] }> = ({ items }) => (
+    <ul>
+        {items.map(item => <li key={item}>{item}</li>)}
+    </ul>
+);
 
 const Sidebar: React.FC<SidebarProps> = ({ data }) => {
     return (
@@ -19,26 +25,58 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
             </div>
 
             <div className={styles.section}>
+                <div className={styles.skillGroup}>
+                    <h3 className={styles.sectionTitle}>Contact</h3>
+                    <div className={styles.contactList}>
+                        <div className={styles.contactItem}>
+                            <FaPhone className={styles.icon} />
+                            <a href={`tel:${data.contacts.phone}`}>{data.contacts.phone}</a>
+                        </div>
+                        <div className={styles.contactItem}>
+                            <FaEnvelope className={styles.icon} />
+                            <a href={`mailto:${data.contacts.email}`}>{data.contacts.email}</a>
+                        </div>
+                        {data.contacts.linkedin && (
+                            <div className={styles.contactItem}>
+                                <FaLinkedin className={styles.icon} />
+                                <a href={data.contacts.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </div>
+                        )}
+                        {data.contacts.github && (
+                            <div className={styles.contactItem}>
+                                <FaGithub className={styles.icon} />
+                                <a href={data.contacts.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </div>
+                        )}
+                        <div className={styles.contactItem}>
+                            <FaMapMarkerAlt className={styles.icon} />
+                            {data.location}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.section}>
                 <h3 className={styles.sectionTitle}>Skills</h3>
 
                 <div className={styles.skillGroup}>
                     <h4 className={styles.skillCategory}>Backend</h4>
-                    <ul>{data.skills.backend.map(s => <li key={s}>{s}</li>)}</ul>
+                    <SkillList items={data.skills.backend} />
                 </div>
 
                 <div className={styles.skillGroup}>
                     <h4 className={styles.skillCategory}>Frontend</h4>
-                    <ul>{data.skills.frontend.map(s => <li key={s}>{s}</li>)}</ul>
+                    <SkillList items={data.skills.frontend} />
                 </div>
 
                 <div className={styles.skillGroup}>
                     <h4 className={styles.skillCategory}>Databases</h4>
-                    <ul>{data.skills.databases.map(s => <li key={s}>{s}</li>)}</ul>
+                    <SkillList items={data.skills.databases} />
                 </div>
 
                 <div className={styles.skillGroup}>
                     <h4 className={styles.skillCategory}>Languages</h4>
-                    <ul>{data.languages.map(s => <li key={s}>{s}</li>)}</ul>
+                    <SkillList items={data.languages} />
                 </div>
             </div>
 
@@ -56,30 +94,12 @@ const Sidebar: React.FC<SidebarProps> = ({ data }) => {
             <div className={styles.section}>
                 <div className={styles.skillGroup}>
                     <h3 className={styles.sectionTitle}>Hobbies</h3>
-                    <ul>{data.hobbies.map(h => <li key={h}>{h}</li>)}</ul>
+                    <SkillList items={data.hobbies} />
                 </div>
             </div>
 
-            <div className={styles.section}>
-                <div className={styles.skillGroup}>
-                    <h3 className={styles.sectionTitle}>Contact</h3>
-                    <div className={styles.contactList}>
-                        <div className={styles.contactItem}>
-                            <FaPhone className={styles.icon} />
-                            <a href={`tel:${data.contacts.phone}`}>{data.contacts.phone}</a>
-                        </div>
-                        <div className={styles.contactItem}>
-                            <FaEnvelope className={styles.icon} />
-                            <a href={`mailto:${data.contacts.email}`}>{data.contacts.email}</a>
-                        </div>
-                        <div className={styles.contactItem}>
-                            <FaMapMarkerAlt className={styles.icon} />
-                            {data.location}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
+
+        </aside >
     );
 };
 

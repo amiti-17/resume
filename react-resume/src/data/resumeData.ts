@@ -32,6 +32,8 @@ export interface ResumeData {
   contacts: {
     phone: string;
     email: string;
+    linkedin?: string;
+    github?: string;
   };
   projects: Project[];
   skills: {
@@ -56,6 +58,8 @@ export const resumeData: ResumeData = {
   contacts: {
     phone: "+1 (902) 580 6212",
     email: "timjobit@gmail.com",
+    linkedin: "https://www.linkedin.com/in/97706971",
+    github: "https://github.com/amiti-17",
   },
   experience: [
     {
@@ -142,5 +146,5 @@ export const resumeData: ResumeData = {
     },
   ],
   languages: ["English", "Ukrainian", "Russian"],
-  hobbies: ["Bike", "Driving", "Auto/tech"],
+  hobbies: ["Bike", "Driving", "Auto/tech", "Music"],
 };
