@@ -1,7 +1,7 @@
 
 import Layout from './components/Layout/Layout';
-import Sidebar from './components/Layout/Sidebar';
-import MainContent from './components/Layout/MainContent';
+import Sidebar from './components/Sidebar';
+import MainContent from './components/MainContent';
 import { resumeData } from './data/resumeData';
 
 function App() {
