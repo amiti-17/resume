@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.item {
+    border-left: 2px solid var(--secondary-color);
+    padding-left: var(--spacing-md);
+}
+
+.header {
+    margin-bottom: var(--spacing-sm);
+}
+
+.role {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    display: inline;
+}
+
+.company {
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+    font-style: italic;
+}
+
+.description {
+    list-style-type: disc;
+    margin-left: var(--spacing-lg);
+    color: var(--text-color);
+}
+
+.description li {
+    margin-bottom: 0.25rem;
+}
