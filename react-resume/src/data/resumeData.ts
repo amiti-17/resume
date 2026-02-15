@@ -1,8 +1,8 @@
 export interface Project {
   title: string;
-  link?: string; // Links might not be in PDF, optional now
+  link?: string;
   technologies?: string[];
-  description?: string; // Added description field
+  description?: string;
 }
 
 export interface Experience {
@@ -15,7 +15,7 @@ export interface Experience {
 
 export interface Education {
   school: string;
-  degree: string; // Changed from program to match PDF 'Bachelor's Degree'
+  degree: string;
   period: string;
 }
 
