@@ -1,18 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #2D3436;
+  /* Core Colors */
+  --primary-color: #333333;
   --secondary-color: #636E72;
-  --accent-color: #0984e3;
-  --background-color: #f5f6fa;
-  --text-color: #2d3436;
-  --card-bg: #ffffff;
+  --accent-gold: #c5a47e;
+  --accent-gold-dark: #b08d65;
+
+  /* Layout Colors */
+  --body-bg: #222222;
+  --sidebar-bg: #2d2d2d;
+  --sidebar-text: #ffffff;
+  --main-bg: #f5f5f0;
+
+  /* Text Colors */
+  --text-color: #333333;
+  --text-light: #666666;
+  --text-dark-grey: #2d3436;
+
+  /* UI Elements */
+  --border-color: #eeeeee;
+  --placeholder-bg: #555555;
+
+  /* Fonts */
   --font-main: 'Montserrat', sans-serif;
+
+  /* Spacing */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
-  --border-radius: 8px;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --spacing-xl: 3rem;
+  --border-radius: 4px;
 }
 
 * {
@@ -23,19 +41,52 @@
 
 body {
   font-family: var(--font-main);
-  background-color: var(--background-color);
+  background-color: var(--body-bg);
   color: var(--text-color);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sidebar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-dark);
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 ul,
 ol {
   list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
 }

@@ -1,0 +1,83 @@
+.main {
+    background-color: var(--main-bg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    color: var(--text-color);
+}
+
+.section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.heading {
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+    /* Centered headings as per PDF */
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: 1px;
+}
+
+.text {
+    line-height: 1.7;
+}
+
+.experienceItem,
+.projectItem {
+    margin-bottom: var(--spacing-lg);
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.experienceItem:hover,
+.projectItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--accent-gold);
+}
+
+.role {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.expMeta {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+.description {
+    list-style: none;
+    /* PDF doesn't show bullets for paragraphs */
+}
+
+.description li {
+    margin-bottom: 0.5rem;
+    color: var(--placeholder-bg);
+}
+
+.projectTitle {
+    font-size: 1.25rem;
+    color: var(--text-dark-grey);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.projectLink {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s;
+}
+
+.projectLink:hover {
+    color: var(--accent-gold);
+}
